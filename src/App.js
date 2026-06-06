@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const IMG_HERO   = "./image1.png";
+const IMG_POSTER = "./image2.jpeg";
 const IMG_FACE   = "./image2.jpeg";
 
 const CSS = `
