@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from "react";
 import emailjs from "@emailjs/browser";
 
 const IMG_HERO   = "./image1.png";
-const IMG_POSTER = "./image2.jpeg";
 const IMG_FACE   = "./image2.jpeg";
 
 const CSS = `
@@ -123,7 +122,8 @@ const CSS = `
 
   .hero-h1 em{animation:name-pulse 4s ease-in-out infinite;}
   @keyframes name-pulse{0%,100%{text-shadow:0 0 40px rgba(204,0,0,.7),0 0 90px rgba(204,0,0,.25);}50%{text-shadow:0 0 60px rgba(204,0,0,1),0 0 120px rgba(204,0,0,.5),0 0 200px rgba(204,0,0,.15);}}
-
+  .soc-text-btn{background:transparent;border:none;font-family:var(--fh);font-size:.58rem;letter-spacing:.22em;color:var(--mt);text-transform:uppercase;padding:0;}
+  .soc-text-btn:hover{color:var(--r);}
   @keyframes ru{from{opacity:0;transform:translateY(26px);}to{opacity:1;transform:translateY(0);}}
   @keyframes rl{to{opacity:1;transform:scaleX(1);}}
 
@@ -470,7 +470,6 @@ export default function Portfolio() {
   const [filter, setFilter]     = useState("all");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
-  const posRef  = useRef({x:0,y:0});
   const ringRef = useRef(null);
   const dotRef  = useRef(null);
   const [form, setForm] = useState({name:"",email:"",msg:""});
@@ -582,7 +581,7 @@ export default function Portfolio() {
         ))}
         <a href="#projects" className="m-cta" onClick={e=>{e.preventDefault();closeMenu("#projects");}}>VIEW PORTFOLIO</a>
         <div className="m-social">
-          <a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Twitter</a>
+          <a href="https://github.com/MuhammadAbdulBari/">GitHub</a><a href="www.linkedin.com/in/abdulbari-dev">LinkedIn</a>
         </div>
       </div>
 
@@ -702,8 +701,8 @@ export default function Portfolio() {
                 <p className="p-desc">{p.desc}</p>
                 <div className="p-tags">{p.tags.map(t=><span key={t} className="p-tag">{t}</span>)}</div>
                 <div className="p-links">
-                  <a href="#" className="p-link live">Live Demo</a>
-                  <a href="#" className="p-link code">Code</a>
+<button className="p-link live">Live Demo</button>
+<button className="p-link code">Code</button>
                 </div>
               </div>
             </div>
@@ -740,7 +739,7 @@ export default function Portfolio() {
               </div>
             </div>
             <div className="socials">
-              <a href="#" className="soc-btn" aria-label="GitHub">
+              <a href="https://github.com/MuhammadAbdulBari/" className="soc-btn" aria-label="GitHub">
                 <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
               </a>
               <a href="#" className="soc-btn" aria-label="LinkedIn">
